@@ -1,0 +1,22 @@
+{
+    "name": "smt/sms",
+    "description": "",
+    "authors": [
+        {
+            "name": "Latrell Chan",
+            "email": "i@latrell.me"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+        ],
+        "psr-0": {
+            "Smt\\Sms\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

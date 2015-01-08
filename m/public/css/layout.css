@@ -1,0 +1,58 @@
+/*themes */
+/*----------------------------------global----------------------------------*/
+body, p, td, th, li { font-family: '微软雅黑', '宋体', Arial, Helvetica, sans-serif, 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;/*字体样式*/ font-size: 14px;/*字体大小*/ line-height: 1.9;/*字体行高*/ color: #666;/*字体颜色*/ }
+a { color: #666 }
+a:hover { color: #333 }
+/*----------------------------------button----------------------------------*/
+.form-control { border: 1px solid #bc9e62;/*border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+		  */ }
+.form-control:focus { border-color: #bc9e62; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(182, 148, 84, 0.075), 0 0 8px rgba(182, 148, 84, 0.6); box-shadow: inset 0 1px 1px rgba(182, 148, 84, 0.075), 0 0 8px rgba(182, 148, 84, 0.6); }
+ .form-control:-moz-placeholder {
+ color: #bc9e62;
+}
+ .form-control::-moz-placeholder {
+ color: #bc9e62;
+ opacity: 1;
+}
+ .form-control:-ms-input-placeholder {
+ color: #bc9e62;
+}
+ .form-control::-webkit-input-placeholder {
+ color: #bc9e62;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control { cursor: not-allowed; background-color: #eeeeee; }
+.btn { }
+.btn:focus { }
+.btn:hover, .btn:focus { color: #ccaa69; text-decoration: none; }
+.btn:active, .btn.active { background-image: none; -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn { pointer-events: none; opacity: 0.65; filter: alpha(opacity=65); -webkit-box-shadow: none; box-shadow: none; }
+.btn-default { color: #ccaa69; background-color: #ffffff; border-color: #bc9e62; }
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default { color: #fff; background-color: #ccaa69; border-color: #ccaa69; }
+.btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default { background-image: none; }
+.btn-default.disabled, .btn-default[disabled], fieldset[disabled] .btn-default, .btn-default.disabled:hover, .btn-default[disabled]:hover, fieldset[disabled] .btn-default:hover, .btn-default.disabled:focus, .btn-default[disabled]:focus, fieldset[disabled] .btn-default:focus, .btn-default.disabled:active, .btn-default[disabled]:active, fieldset[disabled] .btn-default:active, .btn-default.disabled.active, .btn-default[disabled].active, fieldset[disabled] .btn-default.active { background-color: #ffffff; border-color: #cccccc; }
+.btn-default .badge { color: #ffffff; background-color: #fff; }
+/*-----------------------------------------------body-----------------------------------------------------------*/
+html, body { height: 100%; }
+body { overflow-x: hidden; min-width: 320px; }
+
+/*-----------------------------------------------head-----------------------------------------------------------*/
+/*-----------------------------------------------footer-----------------------------------------------------------*/
+/*-----------------------------------------------layout-----------------------------------------------------------*/
+.container { overflow:hidden;}
+@media (min-width: 768px) {
+.container { width: 750px; }
+}
+
+@media (min-width: 992px) {
+.container { width: 750px; }
+}
+
+@media (min-width: 1200px) {
+.container { width: 750px; }
+}
+/*------------------------------------------------submenu--------------------------------------------------------*/
+/*-----------------------------------------------form-----------------------------------------------------------*/

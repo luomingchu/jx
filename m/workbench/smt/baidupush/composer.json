@@ -1,0 +1,23 @@
+{
+    "name": "smt/baidupush",
+    "description": "",
+    "authors": [
+        {
+            "name": "SMT team",
+            "email": "team@xmsmt.com.cn"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Smt\\Baidupush\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

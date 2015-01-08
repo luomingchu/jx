@@ -1,0 +1,212 @@
+{
+    "basePath": "http://ac",
+    "resourcePath": "/global",
+    "apis": [
+        {
+            "path": "/captcha/email",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "\u53d1\u9001\u9a8c\u8bc1\u7801\u5230\u6307\u5b9a\u7684\u90ae\u7bb1",
+                    "nickname": "CaptchaEmailVcode",
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "email",
+                            "type": "string",
+                            "required": true,
+                            "description": "\u90ae\u7bb1\u5730\u5740"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 402,
+                            "message": "\u8868\u5355\u9a8c\u8bc1\u5931\u8d25\u3002"
+                        },
+                        {
+                            "code": 403,
+                            "message": "\u4e0d\u80fd\u572860\u5185\u91cd\u590d\u83b7\u53d6\u3002"
+                        },
+                        {
+                            "code": 200,
+                            "message": "\u6210\u529f\u3002"
+                        }
+                    ],
+                    "notes": "\u6240\u6709\u9700\u8981\u63d0\u4f9b\u90ae\u7bb1\u9a8c\u8bc1\u7801\u7684\u5730\u65b9\uff0c\u90fd\u662f\u901a\u8fc7\u6b64\u63a5\u53e3\u83b7\u53d6\u3002"
+                }
+            ]
+        },
+        {
+            "path": "/captcha/sms",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "\u83b7\u53d6\u77ed\u4fe1\u9a8c\u8bc1\u7801",
+                    "nickname": "CaptchaSMSVcode",
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "mobile",
+                            "type": "string",
+                            "required": true,
+                            "description": "\u624b\u673a\u53f7\u7801"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 402,
+                            "message": "\u8868\u5355\u9a8c\u8bc1\u5931\u8d25\u3002"
+                        },
+                        {
+                            "code": 403,
+                            "message": "\u4e0d\u80fd\u572860\u5185\u91cd\u590d\u83b7\u53d6\u3002"
+                        },
+                        {
+                            "code": 200,
+                            "message": "\u6210\u529f\u3002"
+                        }
+                    ],
+                    "notes": "\u6240\u6709\u9700\u8981\u63d0\u4f9b\u77ed\u4fe1\u9a8c\u8bc1\u7801\u7684\u5730\u65b9\uff0c\u90fd\u662f\u901a\u8fc7\u6b64\u63a5\u53e3\u83b7\u53d6\u3002"
+                }
+            ]
+        },
+        {
+            "path": "/file",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "\u4e0a\u4f20\u6587\u4ef6",
+                    "nickname": "FileUpload",
+                    "type": "UserFile",
+                    "parameters": [
+                        {
+                            "paramType": "body",
+                            "name": "file",
+                            "type": "file",
+                            "required": true,
+                            "description": "\u6587\u4ef6"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "\u5c1a\u672a\u767b\u5f55\u3002"
+                        },
+                        {
+                            "code": 402,
+                            "message": "\u8868\u5355\u9a8c\u8bc1\u5931\u8d25\u3002"
+                        },
+                        {
+                            "code": 200,
+                            "message": "\u6210\u529f\u3002"
+                        }
+                    ],
+                    "notes": "\u5728\u6240\u6709\u63a5\u53e3\u4e2d\u4f7f\u7528\u5230\u6587\u4ef6ID\uff0c\u90fd\u7531\u6b64\u63a5\u53e3\u5f97\u5230\u3002\uff08\u6ce8\u610f\u4f7f\u7528\u6587\u4ef6\u4e0a\u4f20\u65b9\u5f0f enctype=\"multipart/form-data\" \uff09"
+                },
+                {
+                    "method": "GET",
+                    "summary": "\u83b7\u53d6\u6587\u4ef6",
+                    "nickname": "FilePull",
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "id",
+                            "type": "integer",
+                            "required": true,
+                            "description": "\u6587\u4ef6ID"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "width",
+                            "type": "integer",
+                            "description": "\u5bbd\u5ea6"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "height",
+                            "type": "integer",
+                            "description": "\u9ad8\u5ea6"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 404,
+                            "message": "\u6587\u4ef6\u4e0d\u5b58\u5728\u3002"
+                        },
+                        {
+                            "code": 200,
+                            "message": "\u6210\u529f\u3002"
+                        }
+                    ],
+                    "notes": "\u6839\u636e\u6587\u4ef6ID\u53d6\u5f97\u6307\u5b9a\u6587\u4ef6\u3002\u5982\u679c\u6587\u4ef6\u662f\u56fe\u7247\uff0c\u652f\u6301\u83b7\u53d6\u6307\u5b9a\u5bbd\u9ad8\u7684\u7f29\u7565\u56fe\u3002"
+                }
+            ]
+        }
+    ],
+    "models": {
+        "UserFile": {
+            "id": "UserFile",
+            "description": "\u7528\u6237\u6587\u4ef6",
+            "properties": {
+                "id": {
+                    "description": "\u4e3b\u952e",
+                    "type": "integer"
+                },
+                "user": {
+                    "description": "\u6240\u5c5e\u8005",
+                    "$ref": "morphs"
+                },
+                "user_type": {
+                    "description": "\u6240\u5c5e\u8005\u7c7b\u578b",
+                    "type": "string"
+                },
+                "storage": {
+                    "description": "\u6587\u4ef6",
+                    "$ref": "Storage"
+                },
+                "filename": {
+                    "description": "\u6587\u4ef6\u540d",
+                    "type": "integer"
+                },
+                "url": {
+                    "description": "CDN\u5730\u5740",
+                    "type": "string"
+                }
+            }
+        },
+        "Storage": {
+            "id": "Storage",
+            "description": "\u6587\u4ef6",
+            "properties": {
+                "hash": {
+                    "description": "\u6587\u4ef6hash",
+                    "type": "string"
+                },
+                "size": {
+                    "description": "\u5b57\u8282\u5927\u5c0f",
+                    "type": "integer"
+                },
+                "width": {
+                    "description": "\u5bbd\u5ea6",
+                    "type": "integer"
+                },
+                "height": {
+                    "description": "\u9ad8\u5ea6",
+                    "type": "integer"
+                },
+                "mime": {
+                    "description": "Mime",
+                    "type": "string"
+                },
+                "seconds": {
+                    "description": "\u65f6\u957f\uff08\u79d2\uff09",
+                    "type": "double"
+                },
+                "format": {
+                    "description": "\u6587\u4ef6\u683c\u5f0f",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

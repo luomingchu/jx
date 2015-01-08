@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>公式编辑</title>
+<link href="dialog.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div style="font-weight: bold;margin-bottom: 5px;">
+    操作说明：在编辑状态下，输入^，自动变为上标输入。在编辑状态下，输入_，自动变为下标输入。在编辑状态下，使用方向键可以在输入框内移动光标的位置，但不会移出编辑框，使用tab键跳出编辑框。
+</div>
+<div class="tabMenu">
+	<div class="tabTitle">
+		<li>
+			常用公式
+		</li>
+		<li>
+			字母
+		</li>
+		<li>
+			符号
+		</li>
+	</div>
+	<div class="tabContent">
+		<div class="mathBox">
+		</div>
+		<div class="mathBox">
+		</div>
+		<div class="mathBox">
+		</div>
+	</div>
+</div>
+<div id="mathDiv">
+	<p>
+		<span id="jme-math" style="width: 450px;height: 50px;"></span>
+	</p>
+	<p>&nbsp;</p>
+</div>
+<div class="ad">
+</div>
+<script type="text/javascript" src="dialog.js"></script>
+</body>
+</html>

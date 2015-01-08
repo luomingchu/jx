@@ -1,0 +1,239 @@
+{
+    "basePath": "http://ac",
+    "resourcePath": "/chat",
+    "apis": [
+        {
+            "path": "/chat/history",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "\u83b7\u53d6\u804a\u5929\u5386\u53f2\u8bb0\u5f55(\u7528\u6237\u6700\u540e\u4e00\u6761\u6d88\u606f)",
+                    "nickname": "GetChatHistory",
+                    "type": "array",
+                    "items": {
+                        "$ref": "Chat"
+                    },
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "limit",
+                            "type": "integer",
+                            "description": "\u6bcf\u9875\u6761\u76ee\u6570",
+                            "defaultValue": "15"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "page",
+                            "type": "integer",
+                            "description": "\u9875\u9762",
+                            "defaultValue": "1"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 402,
+                            "message": "\u8868\u5355\u9a8c\u8bc1\u5931\u8d25\u3002"
+                        },
+                        {
+                            "code": 200,
+                            "message": "\u804a\u5929\u6d88\u606f\u6a21\u578b\u6570\u7ec4"
+                        }
+                    ],
+                    "notes": "\u83b7\u53d6\u804a\u5929\u5386\u53f2\u8bb0\u5f55\u4fe1\u606f\uff08\u7528\u6237\u6700\u540e\u4e00\u6761\u6d88\u606f\uff09"
+                }
+            ]
+        },
+        {
+            "path": "/chat/messages",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "\u53d1\u5e03\u6d88\u606f",
+                    "nickname": "PublishChatMessage",
+                    "type": "Chat",
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "receiver",
+                            "type": "integer",
+                            "required": true,
+                            "description": "\u63a5\u53d7\u8005ID"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "kind",
+                            "type": "string",
+                            "required": true,
+                            "description": "\u6d88\u606f\u7c7b\u578b\uff0c\u6587\u672c\uff1aText\uff0c\u56fe\u7247\uff1aPicture\uff0c\u8bed\u97f3\uff1aAudio",
+                            "enum": [
+                                "Text",
+                                "Picture",
+                                "Audio"
+                            ]
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "content",
+                            "type": "string",
+                            "description": "\u6587\u672c\u6d88\u606f"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "picture_id",
+                            "type": "string",
+                            "description": "\u56fe\u7247ID\u503c"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "audio_id",
+                            "type": "string",
+                            "description": "\u8bed\u97f3ID\u503c"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 402,
+                            "message": "\u53c2\u6570\u9a8c\u8bc1\u9519\u8bef\u3002"
+                        },
+                        {
+                            "code": 200,
+                            "message": "\u804a\u5929\u6d88\u606f\u6a21\u578b"
+                        }
+                    ],
+                    "notes": "\u53d1\u5e03\u6d88\u606f"
+                },
+                {
+                    "method": "GET",
+                    "summary": "\u83b7\u53d6\u804a\u5929\u8bb0\u5f55",
+                    "nickname": "GetChatMessageList",
+                    "type": "array",
+                    "items": {
+                        "$ref": "Chat"
+                    },
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "user_id",
+                            "type": "integer",
+                            "required": true,
+                            "description": "\u67e5\u770b\u7528\u6237\u7684ID"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "limit",
+                            "type": "integer",
+                            "description": "\u6bcf\u9875\u6761\u76ee\u6570",
+                            "defaultValue": "15"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "page",
+                            "type": "integer",
+                            "description": "\u9875\u9762",
+                            "defaultValue": "1"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 402,
+                            "message": "\u8868\u5355\u9a8c\u8bc1\u5931\u8d25\u3002"
+                        },
+                        {
+                            "code": 200,
+                            "message": "\u804a\u5929\u6d88\u606f\u6a21\u578b\u6570\u7ec4"
+                        }
+                    ],
+                    "notes": "\u83b7\u53d6\u804a\u5929\u8bb0\u5f55"
+                }
+            ]
+        },
+        {
+            "path": "/chat/set-read",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "\u6807\u8bb0\u6d88\u606f\u4e3a\u5df2\u8bfb",
+                    "nickname": "SetChatMsgRead",
+                    "type": "string",
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "chat_id",
+                            "type": "integer",
+                            "required": true,
+                            "description": "\u6d88\u606fID\uff0c\u591a\u6761ID\u7528\u9017\u53f7\u9694\u5f00"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 402,
+                            "message": "\u8868\u5355\u9a8c\u8bc1\u5931\u8d25\u3002"
+                        },
+                        {
+                            "code": 200,
+                            "message": "success"
+                        }
+                    ],
+                    "notes": "\u6807\u8bb0\u6d88\u606f\u4e3a\u5df2\u8bfb"
+                }
+            ]
+        }
+    ],
+    "models": {
+        "Chat": {
+            "id": "Chat",
+            "description": "\u804a\u5929\u6a21\u578b",
+            "properties": {
+                "id": {
+                    "description": "\u4e3b\u952e\u7d22\u5f15",
+                    "type": "integer"
+                },
+                "sender_user": {
+                    "description": "\u53d1\u9001\u4eba",
+                    "$ref": "User"
+                },
+                "receiver": {
+                    "description": "\u63a5\u6536\u4ebaID",
+                    "type": "integer"
+                },
+                "kind": {
+                    "description": "\u6d88\u606f\u7c7b\u578b",
+                    "type": "string",
+                    "enum": [
+                        "Text",
+                        "Picture",
+                        "Audio"
+                    ]
+                },
+                "content": {
+                    "description": "\u4fe1\u606f\u6587\u672c\u5185\u5bb9",
+                    "type": "string"
+                },
+                "picture": {
+                    "description": "\u6d88\u606f\u56fe\u7247\u4fe1\u606f",
+                    "$ref": "Picture"
+                },
+                "audio": {
+                    "description": "\u6d88\u606f\u97f3\u9891\u4fe1\u606f",
+                    "$ref": "Audio"
+                },
+                "status": {
+                    "description": "\u6d88\u606f\u72b6\u6001\uff0cRead:\u5df2\u8bfb\uff0cUnread:\u672a\u8bfb",
+                    "type": "string",
+                    "enum": [
+                        "Read",
+                        "Unread"
+                    ]
+                },
+                "unread_num": {
+                    "description": "\u672a\u8bfb\u65b0\u6d88\u606f\u6570",
+                    "type": "integer"
+                },
+                "created_at": {
+                    "description": "\u521b\u5efa\u65f6\u95f4",
+                    "$ref": "date-format"
+                }
+            }
+        }
+    }
+}

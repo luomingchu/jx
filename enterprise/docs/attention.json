@@ -1,0 +1,244 @@
+{
+    "basePath": "http://ac",
+    "resourcePath": "/attention",
+    "apis": [
+        {
+            "path": "/attention/add",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "\u53d1\u9001\u52a0\u597d\u53cb\u9080\u8bf7|\u540c\u610f\u52a0\u4e3a\u597d\u53cb",
+                    "nickname": "AttentionFriend",
+                    "type": "Attention",
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "friend_id",
+                            "type": "integer",
+                            "required": true,
+                            "description": "\u8981\u5173\u6ce8\u7684\u7528\u6237ID"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "\u5f53\u524d\u672a\u767b\u5f55\u3002"
+                        },
+                        {
+                            "code": 402,
+                            "message": "\u8868\u5355\u9a8c\u8bc1\u5931\u8d25\u3002"
+                        },
+                        {
+                            "code": 200,
+                            "message": "\u5173\u6ce8\u6a21\u578b"
+                        }
+                    ],
+                    "notes": "\u53d1\u9001\u52a0\u597d\u53cb\u9080\u8bf7|\u540c\u610f\u52a0\u4e3a\u597d\u53cb\u3002"
+                }
+            ]
+        },
+        {
+            "path": "/attention/contacts",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "\u901a\u8baf\u5f55",
+                    "nickname": "AttentionContacts",
+                    "type": "array",
+                    "items": {
+                        "$ref": "Attention"
+                    },
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "\u5f53\u524d\u672a\u767b\u5f55\u3002"
+                        },
+                        {
+                            "code": 200,
+                            "message": "\u5173\u6ce8\u6a21\u578b\u5217\u8868"
+                        }
+                    ],
+                    "notes": "\u901a\u8baf\u5f55\u3002"
+                }
+            ]
+        },
+        {
+            "path": "/attention/invite-list",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "\u83b7\u53d6\u65b0\u7684\u597d\u53cb\u8bf7\u6c42\u5217\u8868",
+                    "nickname": "GetInviteList",
+                    "type": "array",
+                    "items": {
+                        "$ref": "Attention"
+                    },
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "limit",
+                            "type": "integer",
+                            "description": "\u6bcf\u9875\u6761\u76ee\u6570",
+                            "defaultValue": "20"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "page",
+                            "type": "integer",
+                            "description": "\u9875\u7801",
+                            "defaultValue": "1"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "\u5f53\u524d\u672a\u767b\u5f55\u3002"
+                        },
+                        {
+                            "code": 200,
+                            "message": "\u5173\u6ce8\u6a21\u578b\u5217\u8868"
+                        }
+                    ],
+                    "notes": "\u83b7\u53d6\u65b0\u7684\u597d\u53cb\u8bf7\u6c42\u5217\u8868\u3002"
+                }
+            ]
+        },
+        {
+            "path": "/attention/invite-num",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "\u83b7\u53d6\u65b0\u7684\u52a0\u4e3a\u597d\u53cb\u8bf7\u6c42\u6570",
+                    "nickname": "GetInviteNum",
+                    "type": "integer",
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "\u5f53\u524d\u672a\u767b\u5f55\u3002"
+                        },
+                        {
+                            "code": 200,
+                            "message": "\u65b0\u7684\u8bf7\u6c42\u6570"
+                        }
+                    ],
+                    "notes": "\u83b7\u53d6\u65b0\u7684\u52a0\u4e3a\u597d\u53cb\u8bf7\u6c42\u6570\u3002"
+                }
+            ]
+        },
+        {
+            "path": "/attention/remove",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "\u53d6\u6d88\u5173\u6ce8\u7528\u6237",
+                    "nickname": "RemoveFriend",
+                    "type": "string",
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "friend_id",
+                            "type": "integer",
+                            "required": true,
+                            "description": "\u8981\u79fb\u9664\u7684\u597d\u53cbID"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "\u5f53\u524d\u672a\u767b\u5f55\u3002"
+                        },
+                        {
+                            "code": 402,
+                            "message": "\u8868\u5355\u9a8c\u8bc1\u5931\u8d25\u3002"
+                        },
+                        {
+                            "code": 200,
+                            "message": "success"
+                        }
+                    ],
+                    "notes": "\u53d6\u6d88\u5173\u6ce8\u7528\u6237\u3002"
+                }
+            ]
+        },
+        {
+            "path": "/attention/search",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "\u641c\u7d22\u7528\u6237",
+                    "nickname": "SearchUser",
+                    "type": "array",
+                    "items": {
+                        "$ref": "User"
+                    },
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "keyword",
+                            "type": "string",
+                            "required": true,
+                            "description": "\u641c\u7d22\u5173\u952e\u5b57"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "limit",
+                            "type": "integer",
+                            "description": "\u6bcf\u9875\u5206\u9875\u6570",
+                            "defaultValue": "20"
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "page",
+                            "type": "integer",
+                            "description": "\u9875\u7801",
+                            "defaultValue": "1"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "\u5f53\u524d\u672a\u767b\u5f55\u3002"
+                        },
+                        {
+                            "code": 402,
+                            "message": "\u8868\u5355\u9a8c\u8bc1\u5931\u8d25\u3002"
+                        },
+                        {
+                            "code": 200,
+                            "message": "success"
+                        }
+                    ],
+                    "notes": "\u641c\u7d22\u7528\u6237\u3002"
+                }
+            ]
+        }
+    ],
+    "models": {
+        "Attention": {
+            "id": "Attention",
+            "description": "\u5173\u6ce8\u5173\u7cfb\u6a21\u578b",
+            "properties": {
+                "id": {
+                    "description": "\u81ea\u589eID",
+                    "type": "integer"
+                },
+                "user_id": {
+                    "description": "\u5f53\u524d\u7528\u6237ID",
+                    "type": "integer"
+                },
+                "friend": {
+                    "description": "\u597d\u53cb\u4fe1\u606f",
+                    "$ref": "User"
+                },
+                "relationship": {
+                    "description": "\u5173\u6ce8\u5173\u7cfb\uff0cUnilateral:\u5355\u5411\u5173\u6ce8\uff0cMutual:\u53cc\u5411\u5173\u6ce8",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "\u5173\u6ce8\u65f6\u95f4",
+                    "$ref": "date-format"
+                }
+            }
+        }
+    }
+}

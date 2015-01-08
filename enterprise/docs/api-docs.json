@@ -1,0 +1,22 @@
+{
+    "apiVersion": null,
+    "swaggerVersion": null,
+    "apis": [
+        {
+            "path": "/attention.{format}",
+            "description": "\u5173\u6ce8\u6a21\u5757"
+        },
+        {
+            "path": "/chat.{format}",
+            "description": "\u804a\u5929\u5ba4\u6a21\u5757"
+        },
+        {
+            "path": "/global.{format}",
+            "description": "\u7cfb\u7edf\u5168\u5c40"
+        },
+        {
+            "path": "/user.{format}",
+            "description": "\u7528\u6237\u64cd\u4f5c"
+        }
+    ]
+}

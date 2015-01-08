@@ -1,0 +1,44 @@
+body { width:100%; height:100%;}
+
+.login_main { background:#00baf7; width:35%; height:100%; position:relative; z-index:1;}
+
+.login_Box { overflow:hidden; position:absolute; z-index:2; top:50%; margin-top:-268px; width:100%;}
+
+.login_logo { background:url(../images/logo_s.png) bottom right no-repeat; background-size:100% auto; width:80%; margin:0 auto; display:block; overflow:hidden; position:relative;}
+.login_logo img { width:60%;}
+.login_jt { background:url(../images/login_jt.png) no-repeat; width:32px; height:15px; position:absolute; bottom:-30px; left:50%; margin-left:-16px;}
+
+.login_con { background:#fff; margin-top:30px; padding:40px 0;}
+.login_con h3 { text-align:center; font-size:24px; color:#b8c4ce; font-weight:400;}
+.login_con ul { width:80%; padding:0 10%;}
+.login_con ul li { border-bottom:1px solid #e9ecee; margin-top:40px; position:relative;}
+.login_con ul li em{ font-style:normal;margin: 0 0 0 0;position: absolute;top: -30px;left: 30px;color: #f60;}
+.login_con ul li i { background:url(../images/login_icon.jpg) no-repeat; width:24px; height:24px; display:inline-block; background-size:cover; position:relative;}
+.login_con ul li span { width:8%; display:block; float:left;}
+.login_con ul li:nth-child(1) i { background-position:0 0; top:7px;}
+.login_con ul li:nth-child(2) i { background-position:0 -24px; top:7px;}
+.login_con ul li input { border:none; height:20px; line-height:20px; padding:10px 2%; border-radius:0; width:88%; color:#333; font-family:"寰蒋闆呴粦";}
+
+.login_con .button { width:80%; margin:0 auto;}
+.login_con .button button { width:100%; height:50px; color:#fff; background:#00baf7; border:none; font-family:"寰蒋闆呴粦"; font-size:16px;}
+
+.login_con .login_tip { width:80%; padding:25px 10% 5px; height:40px; color:#5d6d7e; line-height:20px; overflow:hidden;}
+.login_con .login_tip span { width:70%; float:left; text-align:left;}
+.login_con .login_tip a { width:30%; float:right; text-align:right;}
+.login_con .login_tip a { color:#369;}
+
+.login_con .copyright { text-align:center; padding-top:20px;}
+.login_con .copyright a { color:#369;}
+
+
+.login_main {}
+.login_img { position:absolute; width:65%; right:0px; height:100%; top:0px;}
+
+@media (max-width:800px) {
+	.login_logo { width:90%;}
+	.login_main { width:100%; position:relative; height:auto; min-height:100%;}
+	.login_img { display:none;}
+	.login_Box { position:relative; margin:0px; top:0px; padding:40px 0px;}
+	.login_con { padding:20px 0px;}
+}
+
